@@ -10,23 +10,26 @@ import UIKit
 
 class OptionsViewController: UIViewController {
 
-    @IBOutlet weak var Sound: UISwitch!
+    @IBOutlet weak var soundSwitch: UISwitch!
+    @IBOutlet weak var vibrationSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let defaults = UserDefaults.standard
         let soundValue = defaults.bool(forKey: "sound")
-        Sound.setOn(soundValue, animated: true)
+        soundSwitch.setOn(soundValue, animated: false)
+        let vibrationValue = defaults.bool(forKey: "vibration")
+        vibrationSwitch.setOn(vibrationValue, animated: false)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func testaction(_ sender: UISwitch) {
+    @IBAction func soundChangeAction(_ sender: UISwitch) {
         let defaults = UserDefaults.standard
         defaults.set(sender.isOn, forKey: "sound")
+    }
+    
+    @IBAction func vibrationChangeAction(_ sender: UISwitch) {
+        let defaults = UserDefaults.standard
+        defaults.set(sender.isOn, forKey: "vibration")
     }
 }
