@@ -23,7 +23,8 @@ class HighScoreTableViewController: UITableViewController {
         scores.append(Score(name: "Petar", points: 10))
         scores.append(Score(name: "John", points: 20))
         scores.append(Score(name: "Smith", points: 30))
-        print("test")
+        scores.append(Score(name: "Stanev", points: 15))
+        scores = scores.sorted(by: { $0.points > $1.points }) //sorting by points
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,9 +58,21 @@ class HighScoreTableViewController: UITableViewController {
         // Fetches the appropriate meal for the data source layout.
         let score = scores[indexPath.row]
         
+        //cell.player.text = score.name
         cell.player.text = score.name
         cell.score.text = String(score.points)
-        cell.photo.image = UIImage(named: "first")
+        
+        switch indexPath.row {
+        case 0:
+            cell.photo.image = UIImage(named: "first")
+        case 1:
+            cell.photo.image = UIImage(named: "second")
+        case 2:
+            cell.photo.image = UIImage(named: "third")
+        default:
+            cell.photo.image = UIImage(named: "third")
+        }
+        
         
         return cell
     }
