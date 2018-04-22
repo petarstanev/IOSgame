@@ -59,6 +59,7 @@ class HighScoreTableViewController: UITableViewController {
         
         cell.player.text = score.name
         cell.score.text = String(score.points)
+        cell.photo.image = UIImage(named: "first")
         
         return cell
     }

@@ -13,9 +13,17 @@ class ScoreTableViewCell: UITableViewCell {
     @IBOutlet weak var player: UILabel!
     @IBOutlet weak var score: UILabel!
     
+    @IBOutlet weak var photo: UIImageView!
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
