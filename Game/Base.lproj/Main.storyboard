@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="624" y="-935"/>
         </scene>
-        <!--Game-->
+        <!--Menu-->
         <scene sceneID="q9e-7u-yKF">
             <objects>
-                <viewController title="Game" id="IEZ-98-E2h" customClass="ViewController" customModule="Game" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Menu" id="IEZ-98-E2h" customClass="MenuViewController" customModule="Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jLh-Ou-3rI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,15 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="zue-eK-TGX">
-                                <rect key="frame" x="39" y="105" width="76" height="74"/>
+                                <rect key="frame" x="16" y="105" width="76" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="VGo-Fr-Gpg">
+                                <rect key="frame" x="122" y="105" width="76" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="px9-BW-ioS">
+                                <rect key="frame" x="228" y="105" width="76" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -105,6 +113,11 @@
                     <navigationItem key="navigationItem" title="Game" id="IOh-hF-NwI">
                         <barButtonItem key="backBarButtonItem" title="Back" id="cGX-HA-qQA"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="centerStar" destination="VGo-Fr-Gpg" id="ZyH-D9-ugj"/>
+                        <outlet property="leftStar" destination="zue-eK-TGX" id="IgP-H0-APi"/>
+                        <outlet property="rightStar" destination="px9-BW-ioS" id="ipa-iR-CaA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ysi-QL-JSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

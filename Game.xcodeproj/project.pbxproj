@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB1300A1208D673F00031D53 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1300A0208D673F00031D53 /* MenuViewController.swift */; };
 		EB234034208CD7CD006BF461 /* HighScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234033208CD7CD006BF461 /* HighScoreTableViewController.swift */; };
 		EB234036208CD82F006BF461 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234035208CD82F006BF461 /* Score.swift */; };
 		EB234038208CE2B7006BF461 /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234037208CE2B7006BF461 /* ScoreTableViewCell.swift */; };
@@ -14,7 +15,6 @@
 		EB234040208D3858006BF461 /* wrong_answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB23403F208D3858006BF461 /* wrong_answer.wav */; };
 		EB234042208D391C006BF461 /* correct_answer.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB234041208D391C006BF461 /* correct_answer.wav */; };
 		EB4ADAAB2087F9C700EC7B70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4ADAAA2087F9C700EC7B70 /* AppDelegate.swift */; };
-		EB4ADAAD2087F9C700EC7B70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4ADAAC2087F9C700EC7B70 /* ViewController.swift */; };
 		EB4ADAB02087F9C700EC7B70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4ADAAE2087F9C700EC7B70 /* Main.storyboard */; };
 		EB4ADAB22087F9C800EC7B70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB4ADAB12087F9C800EC7B70 /* Assets.xcassets */; };
 		EB4ADAB52087F9C800EC7B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4ADAB32087F9C800EC7B70 /* LaunchScreen.storyboard */; };
@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB1300A0208D673F00031D53 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EB234033208CD7CD006BF461 /* HighScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreTableViewController.swift; sourceTree = "<group>"; };
 		EB234035208CD82F006BF461 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		EB234037208CE2B7006BF461 /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		EB234041208D391C006BF461 /* correct_answer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct_answer.wav; sourceTree = "<group>"; };
 		EB4ADAA72087F9C700EC7B70 /* Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4ADAAA2087F9C700EC7B70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EB4ADAAC2087F9C700EC7B70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB4ADAAF2087F9C700EC7B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB4ADAB12087F9C800EC7B70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB4ADAB42087F9C800EC7B70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,6 @@
 			children = (
 				EB23403C208D3813006BF461 /* Sound */,
 				EB4ADAAA2087F9C700EC7B70 /* AppDelegate.swift */,
-				EB4ADAAC2087F9C700EC7B70 /* ViewController.swift */,
 				EB4ADAAE2087F9C700EC7B70 /* Main.storyboard */,
 				EB4ADAB12087F9C800EC7B70 /* Assets.xcassets */,
 				EB4ADAB32087F9C800EC7B70 /* LaunchScreen.storyboard */,
@@ -89,6 +88,7 @@
 				EB234035208CD82F006BF461 /* Score.swift */,
 				EB234037208CE2B7006BF461 /* ScoreTableViewCell.swift */,
 				EB234039208D2B70006BF461 /* GameViewController.swift */,
+				EB1300A0208D673F00031D53 /* MenuViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -169,7 +169,7 @@
 				EB23403A208D2B70006BF461 /* GameViewController.swift in Sources */,
 				EB234034208CD7CD006BF461 /* HighScoreTableViewController.swift in Sources */,
 				EBFDB7CE208B8B8100FA3AA9 /* OptionsViewController.swift in Sources */,
-				EB4ADAAD2087F9C700EC7B70 /* ViewController.swift in Sources */,
+				EB1300A1208D673F00031D53 /* MenuViewController.swift in Sources */,
 				EB4ADAAB2087F9C700EC7B70 /* AppDelegate.swift in Sources */,
 				EB234038208CE2B7006BF461 /* ScoreTableViewCell.swift in Sources */,
 				EB234036208CD82F006BF461 /* Score.swift in Sources */,
