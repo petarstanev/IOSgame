@@ -20,10 +20,19 @@ class HighScoreTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        scores.append(Score(name: "Petar", points: 10))
+        /*scores.append(Score(name: "Petar", points: 10))
         scores.append(Score(name: "John", points: 20))
         scores.append(Score(name: "Smith", points: 30))
-        scores.append(Score(name: "Stanev", points: 15))
+        scores.append(Score(name: "Stanev", points: 15))*/
+        
+        let defaults = UserDefaults.standard
+        var scoresStrings = defaults.stringArray(forKey: "Scores") ?? [String]()
+        for scoreString in scoresStrings {
+            let score = Score(input: scoreString)
+            scores.append(score)
+            //print(scoreString)
+        }       
+        
         scores = scores.sorted(by: { $0.points > $1.points }) //sorting by points
     }
 
@@ -70,9 +79,8 @@ class HighScoreTableViewController: UITableViewController {
         case 2:
             cell.photo.image = UIImage(named: "third")
         default:
-            cell.photo.image = UIImage(named: "third")
-        }
-        
+            cell.photo.image = nil;
+        }       
         
         return cell
     }

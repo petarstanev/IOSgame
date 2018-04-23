@@ -12,6 +12,9 @@ import AVFoundation
 class GameViewController: UIViewController {
 
     var player: AVAudioPlayer?
+    @IBOutlet weak var scoreLabel: UILabel!
+    var score: Int = 0
+    
     
     @IBAction func musicButtonEvent(_ sender: UIButton) {
         print("music")
@@ -72,15 +75,32 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func addScore(_ sender: UIButton) {
+        score+=10;
+        scoreLabel.text = String(score);
+        
     }
-    */
-
+    
+    @IBAction func endGame(_ sender: UIButton) {
+    }
+   
+    /*
+    override func prepare(segue: UIStoryboardSegue!, sender: Any!) {
+        if (segue.identifier == "segueTest") {
+            //Checking identifier is crucial as there might be multiple
+            // segues attached to same view
+            var detailVC = segue!.destinationViewController as DetailViewController;
+            detailVC.toPass = textField.text
+        }
+    }*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "endGameSegue") {
+            //Checking identifier is crucial as there might be multiple
+            // segues attached to same view
+            var endVC = segue.destination as! EndGameViewController;
+            endVC.score = score
+        }
+    }
+    
 }

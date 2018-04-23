@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Score {
+class Score : NSObject {
     var name: String
     var points: Int
     
@@ -15,4 +15,17 @@ class Score {
         self.points=points;
         self.name=name;
     }
+    
+    init(input:String){
+        var inputArr = input.components(separatedBy: "---")
+        
+        name = inputArr [0]
+        points = Int(inputArr [1])!
+    }
+    
+    func toString() -> String{
+        return name + "---" + String(points)
+    }
+    
+    
 }

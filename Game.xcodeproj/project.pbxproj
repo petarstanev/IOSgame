@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB0AA568208E0ABC009589FB /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0AA567208E0ABC009589FB /* EndGameViewController.swift */; };
 		EB1300A1208D673F00031D53 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1300A0208D673F00031D53 /* MenuViewController.swift */; };
 		EB234034208CD7CD006BF461 /* HighScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234033208CD7CD006BF461 /* HighScoreTableViewController.swift */; };
 		EB234036208CD82F006BF461 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB234035208CD82F006BF461 /* Score.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB0AA567208E0ABC009589FB /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		EB1300A0208D673F00031D53 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EB234033208CD7CD006BF461 /* HighScoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreTableViewController.swift; sourceTree = "<group>"; };
 		EB234035208CD82F006BF461 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				EB234037208CE2B7006BF461 /* ScoreTableViewCell.swift */,
 				EB234039208D2B70006BF461 /* GameViewController.swift */,
 				EB1300A0208D673F00031D53 /* MenuViewController.swift */,
+				EB0AA567208E0ABC009589FB /* EndGameViewController.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				EB1300A1208D673F00031D53 /* MenuViewController.swift in Sources */,
 				EB4ADAAB2087F9C700EC7B70 /* AppDelegate.swift in Sources */,
 				EB234038208CE2B7006BF461 /* ScoreTableViewCell.swift in Sources */,
+				EB0AA568208E0ABC009589FB /* EndGameViewController.swift in Sources */,
 				EB234036208CD82F006BF461 /* Score.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
