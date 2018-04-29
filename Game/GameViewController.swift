@@ -20,6 +20,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var answerThree: UIButton!
     @IBOutlet weak var answerFour: UIButton!
     
+    
+    @IBOutlet weak var heartOne: UIImageView!
+    @IBOutlet weak var heartTwo: UIImageView!
+    @IBOutlet weak var heartThree: UIImageView!
+    
     var player: AVAudioPlayer?
     
     @IBAction func musicButtonEvent(_ sender: UIButton) {
@@ -79,12 +84,25 @@ class GameViewController: UIViewController {
             newQuestion();
         }else{
             sender.isEnabled = false;
-            if (game.score > 0){
-                //game.score -= 10;
-            }
+            wrongAnswer()
+            
         }
         //update data
         scoreLabel.text = String(game.score)
+    }
+    
+    func wrongAnswer() {
+        game.lives-=1
+        
+        switch game.lives {
+        case 2:
+            heartThree.isHidden = true
+        case 1:
+             heartTwo.isHidden = true
+        default:
+            heartOne.isHidden = true
+            performSegue(withIdentifier: "gameOverSeque", sender: self)
+        }
     }
     
     func newQuestion() {
@@ -107,7 +125,7 @@ class GameViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "endGameSegue") {
+        if (segue.identifier == "gameOverSeque") {
             //Checking identifier is crucial as there might be multiple
             // segues attached to same view
             let endVC = segue.destination as! EndGameViewController;

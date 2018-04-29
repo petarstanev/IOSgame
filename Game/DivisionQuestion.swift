@@ -10,7 +10,7 @@ import Foundation
 
 class DivisionQuestion: Question {
     init(maxNumber:Int) {
-        super.init(maxNumber: maxNumber, symbol: "/")
+        super.init(maxNumber: maxNumber/10, symbol: "/")
     }
     
     override func calculateAnswer() -> Int {

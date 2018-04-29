@@ -11,7 +11,7 @@ import Foundation
 class Game {
     var score: Int = 0
     var level:Int = 1
-    var mistakes: Int = 0
+    var lives: Int = 3
     var over: Bool = false
     var question: Question
     
