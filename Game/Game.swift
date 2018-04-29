@@ -9,12 +9,22 @@
 import Foundation
 
 class Game {
-    var points: Int = 0;
-    var mistakes: Int = 0;
-    var over: Bool = false;
-
+    var score: Int = 0
+    var level:Int = 1
+    var mistakes: Int = 0
+    var over: Bool = false
+    var question: Question
+    
+    init() {
+        self.question = QuestionFactory.getQuestion(level: 0)
+    }
+    
     func generateQuestion() -> Question {
-        var question = AdditionQuestion(maxNumber: 20)
+        if score > 0 && score%20 == 0 {
+            self.level+=1
+        }
+        
+        self.question = QuestionFactory.getQuestion(level: level)
         
         return question
     }

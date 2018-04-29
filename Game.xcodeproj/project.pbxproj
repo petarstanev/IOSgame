@@ -23,6 +23,10 @@
 		EBA0C9B720958EC600CCC7F7 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA0C9B620958EC600CCC7F7 /* Question.swift */; };
 		EBA0C9BB209595F800CCC7F7 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA0C9BA209595F800CCC7F7 /* Answer.swift */; };
 		EBA0C9BD20959B0400CCC7F7 /* AdditionQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA0C9BC20959B0400CCC7F7 /* AdditionQuestion.swift */; };
+		EBA0C9C12095D4D600CCC7F7 /* SubtractionQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA0C9C02095D4D600CCC7F7 /* SubtractionQuestion.swift */; };
+		EBA0C9C32095D4F700CCC7F7 /* MultiplicationQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA0C9C22095D4F700CCC7F7 /* MultiplicationQuestion.swift */; };
+		EBA0C9C52095D50F00CCC7F7 /* DivisionQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA0C9C42095D50F00CCC7F7 /* DivisionQuestion.swift */; };
+		EBA0C9C72095D73000CCC7F7 /* QuestionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA0C9C62095D73000CCC7F7 /* QuestionFactory.swift */; };
 		EBFDB7CE208B8B8100FA3AA9 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFDB7CD208B8B8100FA3AA9 /* OptionsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +49,10 @@
 		EBA0C9B620958EC600CCC7F7 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		EBA0C9BA209595F800CCC7F7 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		EBA0C9BC20959B0400CCC7F7 /* AdditionQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionQuestion.swift; sourceTree = "<group>"; };
+		EBA0C9C02095D4D600CCC7F7 /* SubtractionQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtractionQuestion.swift; sourceTree = "<group>"; };
+		EBA0C9C22095D4F700CCC7F7 /* MultiplicationQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationQuestion.swift; sourceTree = "<group>"; };
+		EBA0C9C42095D50F00CCC7F7 /* DivisionQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionQuestion.swift; sourceTree = "<group>"; };
+		EBA0C9C62095D73000CCC7F7 /* QuestionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionFactory.swift; sourceTree = "<group>"; };
 		EBFDB7CD208B8B8100FA3AA9 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +112,10 @@
 				EBA0C9B620958EC600CCC7F7 /* Question.swift */,
 				EBA0C9BA209595F800CCC7F7 /* Answer.swift */,
 				EBA0C9BC20959B0400CCC7F7 /* AdditionQuestion.swift */,
+				EBA0C9C02095D4D600CCC7F7 /* SubtractionQuestion.swift */,
+				EBA0C9C22095D4F700CCC7F7 /* MultiplicationQuestion.swift */,
+				EBA0C9C42095D50F00CCC7F7 /* DivisionQuestion.swift */,
+				EBA0C9C62095D73000CCC7F7 /* QuestionFactory.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -181,14 +193,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA0C9C72095D73000CCC7F7 /* QuestionFactory.swift in Sources */,
 				EB23403A208D2B70006BF461 /* GameViewController.swift in Sources */,
 				EBA0C9B520958DAC00CCC7F7 /* Game.swift in Sources */,
 				EB234034208CD7CD006BF461 /* HighScoreTableViewController.swift in Sources */,
+				EBA0C9C12095D4D600CCC7F7 /* SubtractionQuestion.swift in Sources */,
 				EBA0C9BB209595F800CCC7F7 /* Answer.swift in Sources */,
 				EBFDB7CE208B8B8100FA3AA9 /* OptionsViewController.swift in Sources */,
+				EBA0C9C52095D50F00CCC7F7 /* DivisionQuestion.swift in Sources */,
 				EBA0C9BD20959B0400CCC7F7 /* AdditionQuestion.swift in Sources */,
 				EB1300A1208D673F00031D53 /* MenuViewController.swift in Sources */,
 				EBA0C9B720958EC600CCC7F7 /* Question.swift in Sources */,
+				EBA0C9C32095D4F700CCC7F7 /* MultiplicationQuestion.swift in Sources */,
 				EB4ADAAB2087F9C700EC7B70 /* AppDelegate.swift in Sources */,
 				EB234038208CE2B7006BF461 /* ScoreTableViewCell.swift in Sources */,
 				EB0AA568208E0ABC009589FB /* EndGameViewController.swift in Sources */,

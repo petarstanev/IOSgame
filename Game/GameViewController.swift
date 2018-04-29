@@ -11,16 +11,16 @@ import AVFoundation
 
 class GameViewController: UIViewController {
 
-    var player: AVAudioPlayer?
+    var game = Game()
+    
     @IBOutlet weak var scoreLabel: UILabel!
-    var score: Int = 0
-    
     @IBOutlet weak var questionLabel: UILabel!
-    
     @IBOutlet weak var answerOne: UIButton!
     @IBOutlet weak var answerTwo: UIButton!
     @IBOutlet weak var answerThree: UIButton!
     @IBOutlet weak var answerFour: UIButton!
+    
+    var player: AVAudioPlayer?
     
     @IBAction func musicButtonEvent(_ sender: UIButton) {
         print("music")
@@ -67,40 +67,53 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        var game = Game()
-        var q = game.generateQuestion()
-        
-        questionLabel.text = q.printQuestion()
-        answerOne.setTitle(q.answers[0].print(), for: .normal)
-        answerTwo.setTitle(q.answers[1].print(), for: .normal)
-        answerThree.setTitle(q.answers[2].print(), for: .normal)
-        answerFour.setTitle(q.answers[3].print(), for: .normal)
-        // Do any additional setup after loading the view.
+        newQuestion()
     }
-
+    
+    @IBAction func answerPress(_ sender: UIButton) {
+        let question = game.question
+        
+        let answer = question.answers[sender.tag]
+        if (answer.correct){
+            game.score += 10;
+            newQuestion();
+        }else{
+            sender.isEnabled = false;
+            if (game.score > 0){
+                //game.score -= 10;
+            }
+        }
+        //update data
+        scoreLabel.text = String(game.score)
+    }
+    
+    func newQuestion() {
+        let question = game.generateQuestion()
+        
+        questionLabel.text = question.printQuestion()
+        answerOne.setTitle(question.answers[0].print(), for: .normal)
+        answerTwo.setTitle(question.answers[1].print(), for: .normal)
+        answerThree.setTitle(question.answers[2].print(), for: .normal)
+        answerFour.setTitle(question.answers[3].print(), for: .normal)
+        answerOne.isEnabled = true
+        answerTwo.isEnabled = true
+        answerThree.isEnabled = true
+        answerFour.isEnabled = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func addScore(_ sender: UIButton) {
-        score+=10;
-        scoreLabel.text = String(score);
-        
-    }
-   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "endGameSegue") {
             //Checking identifier is crucial as there might be multiple
             // segues attached to same view
             let endVC = segue.destination as! EndGameViewController;
-            endVC.score = score
+            endVC.score = game.score
         }
     }
-    
-    func generateAnswer(){
-        
-    }
+
     
 }
