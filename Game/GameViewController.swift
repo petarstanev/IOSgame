@@ -129,15 +129,15 @@ class GameViewController: UIViewController {
     
     @IBAction func answerPress(_ sender: UIButton) {
         let question = game.question
-        
+        print(sender.tag)
         let answer = question.answers[sender.tag]
         if (answer.correct){
-            game.score += 10;
-            newQuestion();
+            game.score += 10
+            newQuestion()
         }else{
-            sender.isEnabled = false;
-            wrongAnswer()
-            
+            sender.backgroundColor = UIColor.red
+            sender.isEnabled = false
+            wrongAnswer()            
         }
         //update data
         scoreLabel.text = String(game.score)
@@ -169,6 +169,10 @@ class GameViewController: UIViewController {
         answerTwo.isEnabled = true
         answerThree.isEnabled = true
         answerFour.isEnabled = true
+        answerOne.backgroundColor = UIColor(red: 115/255.0, green: 253/255.0, blue: 255/255.0, alpha: 1.00)
+        answerTwo.backgroundColor = UIColor(red: 115/255.0, green: 253/255.0, blue: 255/255.0, alpha: 1.00)
+        answerThree.backgroundColor = UIColor(red: 115/255.0, green: 253/255.0, blue: 255/255.0, alpha: 1.00)
+        answerFour.backgroundColor = UIColor(red: 115/255.0, green: 253/255.0, blue: 255/255.0, alpha: 1.00)
     }
     
     override func didReceiveMemoryWarning() {
