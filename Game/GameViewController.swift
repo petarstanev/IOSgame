@@ -25,6 +25,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var heartTwo: UIImageView!
     @IBOutlet weak var heartThree: UIImageView!
     
+    
+    @IBOutlet weak var arrowUp: UIImageView!
+    @IBOutlet weak var arrowRight: UIImageView!
+    @IBOutlet weak var arrowLeft: UIImageView!
+    @IBOutlet weak var arrowDown: UIImageView!
+    
+    
     var player: AVAudioPlayer?
     
     @IBAction func musicButtonEvent(_ sender: UIButton) {
@@ -70,10 +77,54 @@ class GameViewController: UIViewController {
 		
     }
     
+    @objc func swipeGesture(gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.up:
+                answerOne.sendActions(for: .touchUpInside)
+                //print("Swiped up")
+            case UISwipeGestureRecognizerDirection.right:
+                answerTwo.sendActions(for: .touchUpInside)
+                //print("Swiped right")
+            case UISwipeGestureRecognizerDirection.left:
+                answerThree.sendActions(for: .touchUpInside)
+                //print("Swiped left")
+            case UISwipeGestureRecognizerDirection.down:
+                answerFour.sendActions(for: .touchUpInside)
+                //print("Swiped down")
+            default:
+                break
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        setSwipeActions()
         newQuestion()
+        arrowUp.transform = CGAffineTransform(rotationAngle: (.pi / -2))
+        arrowLeft.transform = CGAffineTransform(rotationAngle: (.pi))
+        arrowDown.transform = CGAffineTransform(rotationAngle: (.pi / 2))
+        
+    }
+    
+    func setSwipeActions() {
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture))
+        swipeUp.direction = UISwipeGestureRecognizerDirection.up
+        self.view.addGestureRecognizer(swipeUp)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(swipeRight)
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        self.view.addGestureRecognizer(swipeDown)
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture))
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        self.view.addGestureRecognizer(swipeLeft)
     }
     
     @IBAction func answerPress(_ sender: UIButton) {
@@ -133,6 +184,6 @@ class GameViewController: UIViewController {
             endVC.score = game.score
         }
     }
-
+    
     
 }

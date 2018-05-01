@@ -11,11 +11,8 @@ import Foundation
 struct QuestionFactory {
     
     static func getQuestion(level:Int) -> Question {
-        //var question = Question()
         var questionTypeLevel = level
         let maxNumber = level * 10
-        
-        print("max numder -" + String(maxNumber))
         
         if questionTypeLevel > 4 {
             questionTypeLevel = 4
