@@ -36,9 +36,13 @@ class Question {
     
     
     func generateWrongAnswers(correctAnswerValue: Int) {
-        for _ in 1...3{
-            let value = Int(arc4random_uniform(UInt32(correctAnswerValue)) + 20)
-            let falseAnswer = Answer(number: value, correct: false)
+       
+        while answers.count < 4 {
+            let falseValue = Int(arc4random_uniform(UInt32(correctAnswerValue)) + 20)
+            if falseValue == correctAnswerValue {
+                continue //If the generated wrong answer is the same as the correct one generate a new one.
+            }
+            let falseAnswer = Answer(number: falseValue, correct: false)
             answers.append(falseAnswer)
         }
     }
